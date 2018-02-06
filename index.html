@@ -386,6 +386,8 @@
 <ol>
 <li><code>&lt;if test=&quot; &quot;&gt;</code>标签</li>
 </ol>
+<p>8.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Picasso <span class="title">with</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (singleton == <span class="keyword">null</span>) &#123;</span><br><span class="line"><span class="keyword">synchronized</span> (Picasso.class) &#123;</span><br><span class="line"><span class="keyword">if</span> (singleton == <span class="keyword">null</span>) &#123;</span><br><span class="line">singleton = <span class="keyword">new</span> Builder(context).build();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> singleton;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>作者：panda<br>链接：<a href="https://www.zhihu.com/question/51705387/answer/131263855" target="_blank" rel="noopener">https://www.zhihu.com/question/51705387/answer/131263855</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
           
         
