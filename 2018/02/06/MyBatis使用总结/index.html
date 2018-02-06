@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="MyBatis标签的使用 &amp;lt;select id=&amp;quot;&amp;quot; resultType=&amp;quot;&amp;quot; resultMap=&amp;quot;&amp;quot; parameterType=“”&amp;gt;标签id: 对应Dao的方法名parameterType: 传入Dao方法的参数类型。一般传入多个参数时由Map封装。该参数可省略。resultMap: 如果select返回的对象比较复">
+<meta name="description" content="MyBatis标签的使用 &amp;lt;select id=&amp;quot;&amp;quot; resultType=&amp;quot;&amp;quot; resultMap=&amp;quot;&amp;quot; parameterType=“”&amp;gt;标签id: 对应Dao的方法名parameterType:: 传入Dao方法的参数类型。一般传入多个参数时由Map封装。该参数可省略。resultMap: 如果select返回的对象比较">
 <meta name="keywords" content="MyBatis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MyBatis使用总结">
 <meta property="og:url" content="http://yoursite.com/2018/02/06/MyBatis使用总结/index.html">
 <meta property="og:site_name" content="Blueberry">
-<meta property="og:description" content="MyBatis标签的使用 &amp;lt;select id=&amp;quot;&amp;quot; resultType=&amp;quot;&amp;quot; resultMap=&amp;quot;&amp;quot; parameterType=“”&amp;gt;标签id: 对应Dao的方法名parameterType: 传入Dao方法的参数类型。一般传入多个参数时由Map封装。该参数可省略。resultMap: 如果select返回的对象比较复">
+<meta property="og:description" content="MyBatis标签的使用 &amp;lt;select id=&amp;quot;&amp;quot; resultType=&amp;quot;&amp;quot; resultMap=&amp;quot;&amp;quot; parameterType=“”&amp;gt;标签id: 对应Dao的方法名parameterType:: 传入Dao方法的参数类型。一般传入多个参数时由Map封装。该参数可省略。resultMap: 如果select返回的对象比较">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-06T13:39:01.000Z">
+<meta property="og:updated_time" content="2018-02-06T14:46:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBatis使用总结">
-<meta name="twitter:description" content="MyBatis标签的使用 &amp;lt;select id=&amp;quot;&amp;quot; resultType=&amp;quot;&amp;quot; resultMap=&amp;quot;&amp;quot; parameterType=“”&amp;gt;标签id: 对应Dao的方法名parameterType: 传入Dao方法的参数类型。一般传入多个参数时由Map封装。该参数可省略。resultMap: 如果select返回的对象比较复">
+<meta name="twitter:description" content="MyBatis标签的使用 &amp;lt;select id=&amp;quot;&amp;quot; resultType=&amp;quot;&amp;quot; resultMap=&amp;quot;&amp;quot; parameterType=“”&amp;gt;标签id: 对应Dao的方法名parameterType:: 传入Dao方法的参数类型。一般传入多个参数时由Map封装。该参数可省略。resultMap: 如果select返回的对象比较">
 
 
 
@@ -364,21 +364,25 @@
 
       
         <h1 id="MyBatis标签的使用"><a href="#MyBatis标签的使用" class="headerlink" title="MyBatis标签的使用"></a>MyBatis标签的使用</h1><ol>
-<li><p><code>&lt;select id=&quot;&quot; resultType=&quot;&quot; resultMap=&quot;&quot; parameterType=“”&gt;</code>标签<br>id: 对应Dao的方法名<br>parameterType: 传入Dao方法的参数类型。一般传入多个参数时由Map封装。该参数可省略。<br>resultMap: 如果select返回的对象比较复杂，需要写映射表<br>resultType: 如果返回的类型为简单对象，无嵌套对象，无集合对象，用该参数，参数的类型值要写全。 该参数可省略。  </p>
-<div class="note info"><p>注：获得参数的值可以使用<code>#{}</code> 或者 <code>${}</code>。<code>#{}</code>将所有类型转化为字符串类型， 可防止sql注入攻击。<code>${}</code> </p></div>
+<li><p><code>&lt;select id=&quot;&quot; resultType=&quot;&quot; resultMap=&quot;&quot; parameterType=“”&gt;</code>标签<br><strong>id:</strong> 对应Dao的方法名<br><strong>parameterType:</strong>: 传入Dao方法的参数类型。一般传入多个参数时由<code>Map</code>封装。该参数可省略。<br><strong>resultMap:</strong> 如果<code>select</code>返回的对象比较复杂，需要写映射表<br><strong>resultType:</strong> 如果返回的类型为简单对象，无嵌套对象，无集合对象，用该参数，参数的类型值要写全。 该参数可省略。  </p>
+<div class="note info"><p>注：获得参数的值可以使用<code>#{}</code> 或者 <code>${}</code>。<code>#{}</code>将所有类型转化为字符串类型， 可防止sql注入攻击。<code>${}</code> 按照原数据类型传入sql语句</p></div>
 </li>
-<li><p><code>&lt;insert id=&quot;&quot; useGeneratedKeys=&quot;true&quot; keyProperty=&quot;uniqueName&quot;&gt;</code>标签</p>
-</li>
-<li><p><code>&lt;delete id=&quot;&quot; parameterType=“”&gt;</code>标签</p>
+<li><p><code>&lt;insert id=&quot;&quot; useGeneratedKeys=&quot;true&quot; keyProperty=&quot;&quot;&gt;</code>标签<br> <strong>useGeneratedKeys:</strong> 插入一条数据后，返回其主键，存入<code>keyProperty</code>指定的属性中</p>
 </li>
 <li><p><code>&lt;update id=&quot;&quot; parameterType=“”&gt;</code>标签</p>
-</li>
-<li><p><code>&lt;resultMap&gt;</code>标签</p>
- <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">type</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">column</span>=<span class="string">""</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">column</span>=<span class="string">""</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">ofType</span>=<span class="string">""</span> <span class="attr">resultMap</span>=<span class="string">""</span>&gt;</span> 		<span class="tag">&lt;<span class="name">associate</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">resultMap</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">associate</span>&gt;</span> #用于嵌套对象</span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p> 用于集合对象，ofType指的是参数类型，如果没有加别名要写全称</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> commodity_catalog</span><br><span class="line"><span class="keyword">set</span> item_count = #&#123;itemCount&#125; <span class="keyword">where</span> unique_name = #&#123;uniqueName&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <ol>
+<li><p><code>&lt;delete id=&quot;&quot; parameterType=“”&gt;</code>标签</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &lt;delete id="delete"&gt;</span><br><span class="line">	<span class="keyword">delete</span> <span class="keyword">from</span> commodity_catalog <span class="keyword">where</span> unique_name =</span><br><span class="line">	#&#123;uniqueName&#125; <span class="keyword">limit</span> <span class="number">1</span></span><br><span class="line">&lt;/<span class="keyword">delete</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p><code>&lt;resultMap&gt;</code>标签</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">type</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">column</span>=<span class="string">""</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">column</span>=<span class="string">""</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">ofType</span>=<span class="string">""</span> <span class="attr">resultMap</span>=<span class="string">""</span>&gt;</span> 		<span class="tag">&lt;<span class="name">associate</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">resultMap</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">associate</span>&gt;</span>	<span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p> <strong>collection标签：</strong> 用于集合对象，ofType指的是参数类型，如果没有加别名要写全称<br> <strong>association标签：</strong> 用于嵌套对象</p>
+</li>
 <li><p><code>&lt;forEach&gt;</code>标签</p>
  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">foreach</span> <span class="attr">item</span>=<span class="string">"item"</span> <span class="attr">index</span>=<span class="string">"index"</span> <span class="attr">collection</span>=<span class="string">"list"</span> </span></span><br><span class="line"><span class="tag"><span class="attr">open</span>=<span class="string">"("</span> <span class="attr">separator</span>=<span class="string">","</span> <span class="attr">close</span>=<span class="string">")"</span>&gt;</span></span><br><span class="line">	$&#123;item&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">forEach</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -400,6 +404,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MyBatis/" rel="tag"># MyBatis</a>
+          
+        </div>
       
 
       
@@ -505,6 +515,15 @@
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>
