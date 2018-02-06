@@ -366,7 +366,7 @@
         
           
             <h1 id="MyBatis标签的使用"><a href="#MyBatis标签的使用" class="headerlink" title="MyBatis标签的使用"></a>MyBatis标签的使用</h1><ol>
-<li><code>&lt;select id=&quot;&quot; resultType=&quot;&quot; resultMap=&quot;&quot; parameterType=“”&gt;</code>标签<br> id: 对应Dao的方法名<br> parameterType: 传入Dao方法的参数类型。一般传入多个参数时由Map封装。该参数可省略。<br> resultMap: 如果select返回的对象比较复杂，需要写映射表<br> resultType: 如果返回的类型为简单对象，无嵌套对象，无集合对象，用该参数，参数的类型值要写全。 该参数可省略。<br> 注：获得参数的值可以使用#{} 或者 \${}。#{}将所有类型转化为字符串类型，可防止sql注入攻击。<br> \${}</li>
+<li><code>&lt;select id=&quot;&quot; resultType=&quot;&quot; resultMap=&quot;&quot; parameterType=“”&gt;</code>标签<br>id: 对应Dao的方法名<br>parameterType: 传入Dao方法的参数类型。一般传入多个参数时由Map封装。该参数可省略。<br>resultMap: 如果select返回的对象比较复杂，需要写映射表<br>resultType: 如果返回的类型为简单对象，无嵌套对象，无集合对象，用该参数，参数的类型值要写全。 该参数可省略。<br>注：获得参数的值可以使用#{} 或者 \${}。#{}将所有类型转化为字符串类型，可防止sql注入攻击。<br>\${}</li>
 <li><p><code>&lt;insert id=&quot;&quot; useGeneratedKeys=&quot;true&quot; keyProperty=&quot;uniqueName&quot;&gt;</code>标签</p>
 </li>
 <li><p><code>&lt;delete id=&quot;&quot; parameterType=“”&gt;</code>标签</p>
