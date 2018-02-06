@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="标签的使用   #和$的区别 是打发递四方速递斯蒂芬">
+<meta name="description" content="#标签的使用  \标签 id: 对应Dao的方法名 parameterType: 传入Dao方法的参数类型。一般传入多个参数时由Map封装。该参数可省略。 resultMap: 如果select返回的对象比较复杂，需要写映射表 resultType: 如果返回的类型为简单对象，无嵌套对象，无集合对象，用该参数，参数的类型值要写全。 该参数可省略。 注：获得参数的值可以使用#{} 或者 \${}。#">
 <meta name="keywords" content="MyBatis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MyBatis使用总结">
 <meta property="og:url" content="http://yoursite.com/2018/02/06/MyBatis使用总结/index.html">
 <meta property="og:site_name" content="Blueberry">
-<meta property="og:description" content="标签的使用   #和$的区别 是打发递四方速递斯蒂芬">
+<meta property="og:description" content="#标签的使用  \标签 id: 对应Dao的方法名 parameterType: 传入Dao方法的参数类型。一般传入多个参数时由Map封装。该参数可省略。 resultMap: 如果select返回的对象比较复杂，需要写映射表 resultType: 如果返回的类型为简单对象，无嵌套对象，无集合对象，用该参数，参数的类型值要写全。 该参数可省略。 注：获得参数的值可以使用#{} 或者 \${}。#">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-06T11:31:07.000Z">
+<meta property="og:updated_time" content="2018-02-06T12:20:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBatis使用总结">
-<meta name="twitter:description" content="标签的使用   #和$的区别 是打发递四方速递斯蒂芬">
+<meta name="twitter:description" content="#标签的使用  \标签 id: 对应Dao的方法名 parameterType: 传入Dao方法的参数类型。一般传入多个参数时由Map封装。该参数可省略。 resultMap: 如果select返回的对象比较复杂，需要写映射表 resultType: 如果返回的类型为简单对象，无嵌套对象，无集合对象，用该参数，参数的类型值要写全。 该参数可省略。 注：获得参数的值可以使用#{} 或者 \${}。#">
 
 
 
@@ -363,10 +363,30 @@
       
 
       
-        <p>标签的使用<select><insert><delete><update><foreach><result></result></foreach></update></delete></insert></select></p>
-<p><collection><associate></associate></collection></p>
+        <p>#标签的使用</p>
+<ol>
+<li>\<select id="" resulttype="" resultmap="" parametertype="“”">标签<br> id: 对应Dao的方法名<br> parameterType: 传入Dao方法的参数类型。一般传入多个参数时由Map封装。该参数可省略。<br> resultMap: 如果select返回的对象比较复杂，需要写映射表<br> resultType: 如果返回的类型为简单对象，无嵌套对象，无集合对象，用该参数，参数的类型值要写全。 该参数可省略。<br> 注：获得参数的值可以使用#{} 或者 \${}。#{}将所有类型转化为字符串类型，可防止sql注入攻击。<br> \${}</select></li>
+<li><p>\<insert id="" usegeneratedkeys="true" keyproperty="uniqueName">标签</insert></p>
+</li>
+<li><p>\<delete id="" parametertype="“”">标签</delete></p>
+</li>
+<li><p>\<update id="" parametertype="“”">标签</update></p>
+</li>
+<li><p>\<resultmap>标签</resultmap></p>
+<p> <resultmap id="" type=""></resultmap></p>
+<pre><code>&lt;id property=&quot;&quot; column=&quot;&quot; /&gt;
+&lt;result property=&quot;&quot; column=&quot;&quot; /&gt;
+&lt;collection property=&quot;&quot; ofType=&quot;&quot; resultMap=&quot;&quot;&gt;         &lt;associate property=&quot;&quot; resultMap=&quot;&quot;&gt;&lt;/associate&gt; #用于嵌套对象
+</code></pre><p> <br> #用于集合对象，ofType指的是参数类型，如果没有加别名要写全称</p>
+</li>
+</ol>
+<ol>
+<li><foreach>标签<br><br> <foreach item="item" index="index" collection="list" open="(" separator="," close=")"><br>     ${item}<br> </foreach>
+</foreach></li>
+<li><p><if test=" ">标签</if></p>
+</li>
+</ol>
 <p> #和$的区别</p>
-<p>是打发递四方速递斯蒂芬</p>
 
       
     </div>
