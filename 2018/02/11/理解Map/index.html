@@ -105,7 +105,7 @@
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1518373744422&di=ec0498a09df51403bcaf90c95077f13f&imgtype=0&src=http%3A%2F%2Farticle.fd.zol-img.com.cn%2Ft_s501x2000%2Fg2%2FM00%2F0A%2F07%2FCg-4WVWSMdaIJXlQAAAnWDEVBTUAAGNiwKe1dwAACdw366.jpg">
 <meta property="og:image" content="https://segmentfault.com/img/bVuQw6">
 <meta property="og:image" content="http://p40oah1tn.bkt.clouddn.com/%E7%90%86%E8%A7%A3Map-2.png">
-<meta property="og:updated_time" content="2018-02-12T03:32:32.000Z">
+<meta property="og:updated_time" content="2018-02-12T03:35:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解Map">
 <meta name="twitter:description" content="Map的简单实现方式  使用HashMap可能遇到的问题  简单的散列Map  如何实现Hashcode()  小结">
@@ -410,10 +410,8 @@
 </ul>
 <h1 id="如何实现Hashcode"><a href="#如何实现Hashcode" class="headerlink" title="如何实现Hashcode()"></a>如何实现Hashcode()</h1><h2 id="基本指导"><a href="#基本指导" class="headerlink" title="基本指导"></a>基本指导</h2><ol>
 <li>给<code>int</code>类型的<code>result</code>变量赋值一个常量</li>
-<li><p>为对象内每个有意义的域f计算一个int散列码c<br> <img src="http://p40oah1tn.bkt.clouddn.com/%E7%90%86%E8%A7%A3Map-2.png" alt=""></p>
-</li>
-<li><p>计算 result = 37 * result + c</p>
-</li>
+<li>为对象内每个有意义的域f计算一个int散列码c<br> <img src="http://p40oah1tn.bkt.clouddn.com/%E7%90%86%E8%A7%A3Map-2.png" alt=""></li>
+<li>计算 result = 37 * result + c</li>
 <li>返回result</li>
 <li>检查hashcode()生成的结果，确保相同的对象具有相同的hashcode</li>
 </ol>
@@ -513,6 +511,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/02/13/理解Java反射/" rel="prev" title="理解Java反射">
+                理解Java反射 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -590,7 +592,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -603,7 +605,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
