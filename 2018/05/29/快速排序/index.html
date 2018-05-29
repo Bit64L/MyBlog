@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://p40oah1tn.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F-2.png">
 <meta property="og:image" content="http://p40oah1tn.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F4.png">
 <meta property="og:image" content="http://p40oah1tn.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F4.png">
-<meta property="og:updated_time" content="2018-05-29T09:03:41.000Z">
+<meta property="og:updated_time" content="2018-05-29T09:15:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速排序">
 <meta name="twitter:description" content="思想  第一种代码实现  第二种代码实现  进一步改进  参考">
@@ -385,7 +385,7 @@
 <p>代码在检查第i个元素时需要考虑两种情况：当<code>arr[i] &gt;= t</code>时, i直接向下一个元素移动；当<code>arr[i]&lt;t</code>时，m移向下一个元素，然后交换<code>arr[m]</code>和<code>arr[i]</code>。</p>
 <p>当循环终止时，有如下结果：</p>
 <p><center><br><img src="http://p40oah1tn.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F4.png" width="50%"><br>图4<br></center><br>则在m指向元素的左边都是小于t的，邮边都是大于t的。</p>
-<p>{ % node info %}<br>优点：编码简单，易于理解；在随机排列中排序效率较高<br>缺点：当数组中所有元素的值相同时或者为升序，需要n-1次划分，算法效率退化至O(n2)<br>{ % node info %}</p>
+<div class="note info"><p>优点：编码简单，易于理解；在随机排列中排序效率较高<br>缺点：当数组中所有元素的值相同时或者为升序，需要n-1次划分，算法效率退化至O(n2)</p></div>
 <h1 id="第二种代码实现"><a href="#第二种代码实现" class="headerlink" title="第二种代码实现"></a>第二种代码实现</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">partition2</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = lo + <span class="number">1</span>, j = hi, m = lo, t = arr[lo];</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= hi &amp;&amp; arr[i] &lt; t) i++;</span><br><span class="line">        <span class="keyword">while</span> (arr[j] &gt; t) j--;</span><br><span class="line">        <span class="keyword">if</span> (i &gt;= j) <span class="keyword">break</span>;</span><br><span class="line">        swap(arr, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">    swap(arr, m, j);</span><br><span class="line">    <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>该解法提高了当数组中所有元素均相同时的效率，虽然做了很多无用的交换操作。</p>
 <h1 id="进一步改进"><a href="#进一步改进" class="headerlink" title="进一步改进"></a>进一步改进</h1><ol>
