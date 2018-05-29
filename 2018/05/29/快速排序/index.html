@@ -78,8 +78,6 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MyBatis" />
-
 
 
 
@@ -94,17 +92,22 @@
 
 
 
-<meta name="keywords" content="MyBatis">
+<meta name="description" content="思想  第一种代码实现  第二种代码实现  进一步改进  参考">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MyBatis使用总结">
-<meta property="og:url" content="http://yoursite.com/2018/02/06/MyBatis使用总结/index.html">
+<meta property="og:title" content="快速排序">
+<meta property="og:url" content="http://yoursite.com/2018/05/29/快速排序/index.html">
 <meta property="og:site_name" content="Blueberry">
+<meta property="og:description" content="思想  第一种代码实现  第二种代码实现  进一步改进  参考">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p40oah1tn.bkt.clouddn.com/%E7%90%86%E8%A7%A3MyBatis.jpg">
-<meta property="og:updated_time" content="2018-03-09T10:56:55.000Z">
+<meta property="og:image" content="http://p40oah1tn.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F-1.png">
+<meta property="og:image" content="http://p40oah1tn.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F-2.png">
+<meta property="og:image" content="http://p40oah1tn.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F4.png">
+<meta property="og:image" content="http://p40oah1tn.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F4.png">
+<meta property="og:updated_time" content="2018-05-29T09:03:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MyBatis使用总结">
-<meta name="twitter:image" content="http://p40oah1tn.bkt.clouddn.com/%E7%90%86%E8%A7%A3MyBatis.jpg">
+<meta name="twitter:title" content="快速排序">
+<meta name="twitter:description" content="思想  第一种代码实现  第二种代码实现  进一步改进  参考">
+<meta name="twitter:image" content="http://p40oah1tn.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F-1.png">
 
 
 
@@ -133,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/06/MyBatis使用总结/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/29/快速排序/"/>
 
 
 
 
 
-  <title>MyBatis使用总结 | Blueberry</title>
+  <title>快速排序 | Blueberry</title>
   
 
 
@@ -272,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/06/MyBatis使用总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/快速排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李文枭">
@@ -289,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MyBatis使用总结</h1>
+          <h1 class="post-title" itemprop="name headline">快速排序</h1>
         
 
         <div class="post-meta">
@@ -301,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-06T18:58:53+08:00">
-                2018-02-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T17:03:41+08:00">
+                2018-05-29
               </time>
             
 
@@ -321,8 +324,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/06/MyBatis使用总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/02/06/MyBatis使用总结/" itemprop="commentsCount"></span>
+                <a href="/2018/05/29/快速排序/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/05/29/快速排序/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -331,7 +334,7 @@
 
           
           
-             <span id="/2018/02/06/MyBatis使用总结/" class="leancloud_visitors" data-flag-title="MyBatis使用总结">
+             <span id="/2018/05/29/快速排序/" class="leancloud_visitors" data-flag-title="快速排序">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -362,30 +365,35 @@
       
 
       
-        <p><img src="http://p40oah1tn.bkt.clouddn.com/%E7%90%86%E8%A7%A3MyBatis.jpg" alt=""></p>
+        <div class="note default"><ol>
+<li><p>思想</p>
+</li>
+<li><p>第一种代码实现</p>
+</li>
+<li><p>第二种代码实现</p>
+</li>
+<li><p>进一步改进</p>
+</li>
+<li><p>参考</p>
+</li>
+</ol></div>
 <a id="more"></a>
-<h1 id="MyBatis标签的使用"><a href="#MyBatis标签的使用" class="headerlink" title="MyBatis标签的使用"></a>MyBatis标签的使用</h1><ol>
-<li><p><code>&lt;select id=&quot;&quot; resultType=&quot;&quot; resultMap=&quot;&quot; parameterType=“”&gt;</code>标签<br><strong>id:</strong> 对应Dao的方法名<br><strong>parameterType:</strong>: 传入Dao方法的参数类型。一般传入多个参数时由<code>Map</code>封装。该参数可省略。<br><strong>resultMap:</strong> 如果<code>select</code>返回的对象比较复杂，需要写映射表<br><strong>resultType:</strong> 如果返回的类型为简单对象，无嵌套对象，无集合对象，用该参数，参数的类型值要写全。 该参数可省略。  </p>
-<div class="note info"><p>注：获得参数的值可以使用<code>#{}</code> 或者 <code>${}</code>。<code>#{}</code>将所有类型转化为字符串类型， 可防止sql注入攻击。<code>${}</code> 按照原数据类型传入sql语句</p></div>
-</li>
-<li><p><code>&lt;insert id=&quot;&quot; useGeneratedKeys=&quot;true&quot; keyProperty=&quot;&quot;&gt;</code>标签<br><strong>useGeneratedKeys:</strong> 插入一条数据后，返回其主键，存入<code>keyProperty</code>指定的属性中</p>
-</li>
-<li><p><code>&lt;update id=&quot;&quot; parameterType=“”&gt;</code>标签</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> commodity_catalog</span><br><span class="line"><span class="keyword">set</span> item_count = #&#123;itemCount&#125; <span class="keyword">where</span> unique_name = #&#123;uniqueName&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>&lt;delete id=&quot;&quot; parameterType=“”&gt;</code>标签</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;delete id="delete"&gt;</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> commodity_catalog <span class="keyword">where</span> unique_name =</span><br><span class="line">#&#123;uniqueName&#125; <span class="keyword">limit</span> <span class="number">1</span></span><br><span class="line">&lt;/<span class="keyword">delete</span>&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>&lt;resultMap&gt;</code>标签</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">type</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">column</span>=<span class="string">""</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">column</span>=<span class="string">""</span> /&gt;</span>  </span><br><span class="line">	<span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">ofType</span>=<span class="string">""</span> <span class="attr">resultMap</span>=<span class="string">""</span> /&gt;</span>    </span><br><span class="line">	<span class="tag">&lt;<span class="name">associate</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">resultMap</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">associate</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>collection标签：</strong> 用于集合对象，ofType指的是参数类型，如果没有加别名要写全称<br><strong>association标签：</strong> 用于嵌套对象</p>
-</li>
-<li><p><code>&lt;forEach&gt;</code>标签</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">foreach</span> <span class="attr">item</span>=<span class="string">"item"</span> <span class="attr">index</span>=<span class="string">"index"</span> <span class="attr">collection</span>=<span class="string">"list"</span> <span class="attr">open</span>=<span class="string">"("</span> <span class="attr">separator</span>=<span class="string">","</span> <span class="attr">close</span>=<span class="string">")"</span>&gt;</span></span><br><span class="line">	$&#123;item&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">forEach</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>&lt;if test=&quot; &quot;&gt;</code>标签</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"uniqueName != '' and uniqueName != null"</span>&gt;</span><span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
+<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><p>快排使用了分治算法：将数组划分为两部分，然后对他们进行递归排序。例如，图1的八元组：</p>
+<center><br><img src="http://p40oah1tn.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F-1.png" width="50%"><br>图1<br></center><br>我们围绕第一个元素(55)进行划分，使得所有小于55的元素都在它的左边，所有大于55的元素都在它的右边，如图2：<br><center><img src="http://p40oah1tn.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F-2.png" width="50%"><br>图2<br></center><br>于是数组被划分为两部分，然后对每个部分分别进行递归排序，最终即可得到一个有序的数组。<br><br><br># 第一种代码实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickSort</span> <span class="keyword">implements</span> <span class="title">BaseSort</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (lo &gt;= hi) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> p = partition(arr, lo, hi);</span><br><span class="line">        sort(arr, lo, p - <span class="number">1</span>);</span><br><span class="line">        sort(arr, p + <span class="number">1</span>, hi);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = lo, t = arr[lo];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = lo + <span class="number">1</span>; i &lt;= hi; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i] &lt; t) &#123;</span><br><span class="line">                swap(arr, ++m, i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr, m, lo);</span><br><span class="line">        <span class="keyword">return</span> m;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = arr[a];</span><br><span class="line">        arr[a] = arr[b];</span><br><span class="line">        arr[b] = temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        sort(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">            System.out.print(arr[i] + <span class="string">" "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><code>sort()</code>方法描述了快排的基本框架，其中<code>partitoin()</code>的实现方式是影响快排效率的关键。图3表明了一种简单的实现方式：<br><center><br><img src="http://p40oah1tn.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F4.png" width="50%"><br>图3<br></center>
+
+<p>a,b分别是数组的第一个元素和最后一个元素的下标，t是划分值，m是在数组值小于t部分的最后一个元素的下标，i表示第一个待排序的元素的下标。</p>
+<p>代码在检查第i个元素时需要考虑两种情况：当<code>arr[i] &gt;= t</code>时, i直接向下一个元素移动；当<code>arr[i]&lt;t</code>时，m移向下一个元素，然后交换<code>arr[m]</code>和<code>arr[i]</code>。</p>
+<p>当循环终止时，有如下结果：</p>
+<p><center><br><img src="http://p40oah1tn.bkt.clouddn.com/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F4.png" width="50%"><br>图4<br></center><br>则在m指向元素的左边都是小于t的，邮边都是大于t的。</p>
+<p>{ % node info %}<br>优点：编码简单，易于理解；在随机排列中排序效率较高<br>缺点：当数组中所有元素的值相同时或者为升序，需要n-1次划分，算法效率退化至O(n2)<br>{ % node info %}</p>
+<h1 id="第二种代码实现"><a href="#第二种代码实现" class="headerlink" title="第二种代码实现"></a>第二种代码实现</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">partition2</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = lo + <span class="number">1</span>, j = hi, m = lo, t = arr[lo];</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= hi &amp;&amp; arr[i] &lt; t) i++;</span><br><span class="line">        <span class="keyword">while</span> (arr[j] &gt; t) j--;</span><br><span class="line">        <span class="keyword">if</span> (i &gt;= j) <span class="keyword">break</span>;</span><br><span class="line">        swap(arr, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">    swap(arr, m, j);</span><br><span class="line">    <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该解法提高了当数组中所有元素均相同时的效率，虽然做了很多无用的交换操作。</p>
+<h1 id="进一步改进"><a href="#进一步改进" class="headerlink" title="进一步改进"></a>进一步改进</h1><ol>
+<li>为了避免某些特殊情况的元素排列导致的性能降低，可以随机的选取数组中的某一个元素作为标准。</li>
+<li>考虑到插入排序对于几乎有序的元素排列效率很高，可以对快排设置一个阈值y，即把<code>sort()</code>函数的第一个<code>if</code>语句改为<code>if (hi - lo &gt;= y) return;</code>。这样，完成快排之后会剩下许多待排序的小数组，最后调用一次插入排序即可。</li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<li>编程珠玑第二版</li>
 </ol>
 
       
@@ -402,12 +410,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/MyBatis/" rel="tag"># MyBatis</a>
-          
-        </div>
-      
 
       
       
@@ -417,15 +419,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/03/19/Algorithms-Part-I-Week2-Deques-and-Randomized-Queues/" rel="next" title="Algorithms Part I Week2: Deques and Randomized Queues">
+                <i class="fa fa-chevron-left"></i> Algorithms Part I Week2: Deques and Randomized Queues
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/11/理解Map/" rel="prev" title="理解Map">
-                理解Map <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -576,7 +578,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MyBatis标签的使用"><span class="nav-number">1.</span> <span class="nav-text">MyBatis标签的使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#思想"><span class="nav-number">1.</span> <span class="nav-text">思想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二种代码实现"><span class="nav-number">2.</span> <span class="nav-text">第二种代码实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进一步改进"><span class="nav-number">3.</span> <span class="nav-text">进一步改进</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -740,7 +742,7 @@ var _hmt = _hmt || [];
 		_hcwp.push({widget:"Bloggerstream", widget_id: 100909, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 100909, xid: "2018/02/06/MyBatis使用总结/"});
+		_hcwp.push({widget:"Stream", widget_id: 100909, xid: "2018/05/29/快速排序/"});
 		
 
 		(function() {
