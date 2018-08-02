@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Blueberry">
 <meta property="og:description" content="工作中，很多时候需要在新的机器上测试自己的代码，每次都需要安装Python的虚拟环境，而网上教程质量参差不齐，于是写下这篇博文以备日后使用。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-02T03:26:31.000Z">
+<meta property="og:updated_time" content="2018-08-02T03:39:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pyenv, Pyenv-Virtualenv的安装以及使用">
 <meta name="twitter:description" content="工作中，很多时候需要在新的机器上测试自己的代码，每次都需要安装Python的虚拟环境，而网上教程质量参差不齐，于是写下这篇博文以备日后使用。">
@@ -365,23 +365,13 @@
       
         <p>工作中，很多时候需要在新的机器上测试自己的代码，每次都需要安装Python的虚拟环境，而网上教程质量参差不齐，于是写下这篇博文以备日后使用。</p>
 <a id="more"></a>
-<h1 id="安装Pyenv-CentOS"><a href="#安装Pyenv-CentOS" class="headerlink" title="安装Pyenv(CentOS)"></a>安装Pyenv(CentOS)</h1><ol>
-<li>安装依赖包 </li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install git gcc make patch zlib-devel gdbm-devel openssl-devel sqlite-devel bzip2-devel readline-devel</span><br></pre></td></tr></table></figure>
-<ol>
-<li>安装Pyenv(pyenv-virtualenv插件会自动安装)</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash</span><br></pre></td></tr></table></figure>
+<h1 id="安装Pyenv-CentOS"><a href="#安装Pyenv-CentOS" class="headerlink" title="安装Pyenv(CentOS)"></a>安装Pyenv(CentOS)</h1><h2 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install git gcc make patch zlib-devel gdbm-devel openssl-devel sqlite-devel bzip2-devel readline-devel</span><br></pre></td></tr></table></figure>
+<h2 id="安装Pyenv-pyenv-virtualenv插件会自动安装"><a href="#安装Pyenv-pyenv-virtualenv插件会自动安装" class="headerlink" title="安装Pyenv(pyenv-virtualenv插件会自动安装)"></a>安装Pyenv(pyenv-virtualenv插件会自动安装)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash</span><br></pre></td></tr></table></figure>
 <div class="note warning"><p>这个过程可能会比较慢</p></div>
-<ol>
-<li>设置环境变量<br>在~/.bash_profile中加入这三行</li>
-</ol>
+<h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><p>在~/.bash_profile中加入这三行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export PATH=&quot;~/.pyenv/bin:$PATH&quot;</span><br><span class="line">eval &quot;$(pyenv init -)&quot;</span><br><span class="line">eval &quot;$(pyenv virtualenv-init -)&quot;</span><br></pre></td></tr></table></figure>
 <div class="note info"><p>/etc/.bash_profile 对所以用户都有效<br>~/.bash_profile 只对当前用户有效<br><strong>注：.bash_profile profile .bashrc等这些配置文件的执行是有规则的</strong></p></div>
-<h1 id="Pyenv的使用"><a href="#Pyenv的使用" class="headerlink" title="Pyenv的使用"></a>Pyenv的使用</h1><ol>
-<li>基本命令</li>
-</ol>
+<h1 id="Pyenv的使用"><a href="#Pyenv的使用" class="headerlink" title="Pyenv的使用"></a>Pyenv的使用</h1><p>##基本命令</p>
 <p><code>pyenv versions</code> 查看Python虚拟环境<br><code>pyenv virtualenvs</code> 查看python虚拟环境和上面类似<br><code>pyenv activate venv</code> 激活虚拟环境venv<br><code>pyenv virtualenv venv 3.5.2</code> 安装3.5.2版本的Python虚拟环境<br><code>pyenv install 3.5.2</code> 安装3.5.2版本的Python(注：此过程可能较慢，可以手动下载好Python的压缩包放入~/.pyenv/cache/，然后再执行pyenv install命令)<br><code>pyenv global/system 3.5.2</code> 切换python版本<br><code>pyenv deacticate venv</code> 退出Python虚拟环境</p>
 <div class="note info"><p>本教程Ubuntu也适用，只需要将yum换成apt-get即可<br>日后本教程可能会加入OS X的安装教程</p></div>
 
@@ -573,7 +563,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Pyenv-CentOS"><span class="nav-number">1.</span> <span class="nav-text">安装Pyenv(CentOS)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pyenv的使用"><span class="nav-number">2.</span> <span class="nav-text">Pyenv的使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Pyenv-CentOS"><span class="nav-number">1.</span> <span class="nav-text">安装Pyenv(CentOS)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装依赖包"><span class="nav-number">1.1.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Pyenv-pyenv-virtualenv插件会自动安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装Pyenv(pyenv-virtualenv插件会自动安装)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置环境变量"><span class="nav-number">1.3.</span> <span class="nav-text">设置环境变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pyenv的使用"><span class="nav-number">2.</span> <span class="nav-text">Pyenv的使用</span></a></li></ol></div>
             
 
           </div>
