@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Blueberry">
 <meta property="og:description" content="工作中，很多时候需要在新的机器上测试自己的代码，每次都需要安装Python的虚拟环境，而网上教程质量参差不齐，于是写下这篇博文以备日后使用。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-02T03:48:10.000Z">
+<meta property="og:updated_time" content="2018-08-02T03:55:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pyenv, Pyenv-Virtualenv的安装以及使用">
 <meta name="twitter:description" content="工作中，很多时候需要在新的机器上测试自己的代码，每次都需要安装Python的虚拟环境，而网上教程质量参差不齐，于是写下这篇博文以备日后使用。">
@@ -367,7 +367,7 @@
 <a id="more"></a>
 <h1 id="安装Pyenv-CentOS"><a href="#安装Pyenv-CentOS" class="headerlink" title="安装Pyenv(CentOS)"></a>安装Pyenv(CentOS)</h1><h2 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install git gcc make patch zlib-devel gdbm-devel openssl-devel sqlite-devel bzip2-devel readline-devel</span><br></pre></td></tr></table></figure>
 <h2 id="安装Pyenv-pyenv-virtualenv插件会自动安装"><a href="#安装Pyenv-pyenv-virtualenv插件会自动安装" class="headerlink" title="安装Pyenv(pyenv-virtualenv插件会自动安装)"></a>安装Pyenv(pyenv-virtualenv插件会自动安装)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash</span><br></pre></td></tr></table></figure>
-<div class="note warning"><p>这个过程可能会比较慢</p></div>
+<div class="note warning"><p>这个过程可能会比较慢<br>如果下载插件virtualenvs失败，则手动下<br><code>git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/cachepyenv-virtualenv</code></p></div>
 <h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><p>在~/.bash_profile中加入这三行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export PATH=&quot;~/.pyenv/bin:$PATH&quot;</span><br><span class="line">eval &quot;$(pyenv init -)&quot;</span><br><span class="line">eval &quot;$(pyenv virtualenv-init -)&quot;</span><br></pre></td></tr></table></figure>
 <div class="note info"><p>/etc/.bash_profile 对所以用户都有效<br>~/.bash_profile 只对当前用户有效<br><strong>注：zsh打开时读取的文件是.zshrc，则环境变量要写在这个文件里面</strong></p></div>
