@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Algorithms Part I," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/1.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="问题描述  求解过程  代码实现">
+<meta name="keywords" content="Algorithms Part I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Algorithms Part I Week1 Assignment: Percolation">
+<meta property="og:url" content="http://yoursite.com/2018/03/11/Algorithms-Part-I-Week1-Assignment-Percolation/index.html">
+<meta property="og:site_name" content="Blueberry">
+<meta property="og:description" content="问题描述  求解过程  代码实现">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p40oah1tn.bkt.clouddn.com/percolation-1.png">
+<meta property="og:image" content="http://p40oah1tn.bkt.clouddn.com/precolation-2.png">
+<meta property="og:image" content="http://p40oah1tn.bkt.clouddn.com/percolation-3.png">
+<meta property="og:updated_time" content="2018-03-11T13:45:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Algorithms Part I Week1 Assignment: Percolation">
+<meta name="twitter:description" content="问题描述  求解过程  代码实现">
+<meta name="twitter:image" content="http://p40oah1tn.bkt.clouddn.com/percolation-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/11/Algorithms-Part-I-Week1-Assignment-Percolation/"/>
+
+
+
+
+
+  <title>Algorithms Part I Week1 Assignment: Percolation | Blueberry</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6c9894e1ad2084284c357e1720382e5e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Blueberry</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/Algorithms-Part-I-Week1-Assignment-Percolation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李文枭">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blueberry">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Algorithms Part I Week1 Assignment: Percolation</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T21:37:10+08:00">
+                2018-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/11/Algorithms-Part-I-Week1-Assignment-Percolation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/03/11/Algorithms-Part-I-Week1-Assignment-Percolation/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2018/03/11/Algorithms-Part-I-Week1-Assignment-Percolation/" class="leancloud_visitors" data-flag-title="Algorithms Part I Week1 Assignment: Percolation">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div class="note default"><ol>
+<li><p>问题描述</p>
+</li>
+<li><p>求解过程</p>
+</li>
+<li><p>代码实现</p>
+</li>
+</ol></div>
+<a id="more"></a>
+<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>一个<code>n*n</code>的渗滤系统，初始所有的格子都是阻塞状态，随机的打开格子，直到顶部格子和底部格子连通。重复试验多次求出<code>p*</code>，满足当<code>p &lt; p*</code>时，<code>n*n</code>的格子系统几乎没有渗滤，当<code>p &gt; p*</code> 时， <code>n*n</code>的格子系统几乎渗滤。使用蒙特卡洛方法进行模拟。图1左图表边格子系统处于渗滤状态，右边表示格子系统出路非渗滤状态。</p>
+<center><img src="http://p40oah1tn.bkt.clouddn.com/percolation-1.png"><br>图1</center>
+
+<p>问题的详细描述见<a href="http://coursera.cs.princeton.edu/algs4/assignments/percolation.html" target="_blank" rel="noopener">http://coursera.cs.princeton.edu/algs4/assignments/percolation.html</a></p>
+<h1 id="求解过程"><a href="#求解过程" class="headerlink" title="求解过程"></a>求解过程</h1><ol>
+<li>理解题意后，我先写出了最简单最暴力的实现方式，此时判断格子系统是否渗滤需要逐个判断顶部的某一个格子是否与底部的某一个格子连通，时间复杂度需要O(n2).</li>
+<li>然后对上一步代码进行优化，构造顶部和底部的虚拟结点，在判断格子系统是否渗滤时，只需要判断顶部虚拟结点和底部虚拟结点是否相连。如图2。<br> <center><img src="http://p40oah1tn.bkt.clouddn.com/precolation-2.png" width="50%"><br> 图2</center><br> 但是在实现isFull()方法时，如果直接判断目标格子是否和顶部虚拟结点相连时，会出现backwash问题: 目标结点与底部虚拟结点相连，底部虚拟结点和顶部虚拟结点相连，这样使得程序判断目标结点与顶部虚拟结点相连而出错，如图3所示。<br> <center><img src="http://p40oah1tn.bkt.clouddn.com/percolation-3.png" width="50%"><br> 图3</center><br> 如上图所示，被红圈圈出的地方会被程序错误的认为与顶部格子相通。</li>
+<li>解决backwash的方法：多维护一个WeightedQuickUnionUF类的实例，该实例不保存底部虚拟结点，实现isFull()方法时，使用该实例来判断目标结点是否与顶部虚拟结点相连接。</li>
+</ol>
+<h1 id="代码实现-亲测100-100分"><a href="#代码实现-亲测100-100分" class="headerlink" title="代码实现(亲测100/100分)"></a>代码实现(亲测100/100分)</h1><ul>
+<li>Percolation类  </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.WeightedQuickUnionUF;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Percolation</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> nr, nc;<span class="comment">//格子系统的长和宽</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span>[] state;<span class="comment">//记录方格是否被打开</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeightedQuickUnionUF uf;<span class="comment">//用于判断系统是否渗滤</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeightedQuickUnionUF backwash;<span class="comment">//解决backwash,不保留virtualBottom</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> openSite;<span class="comment">//方格状态为打开的数量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> virtualTop;<span class="comment">//顶部虚拟结点,索引为n</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> virtualBottom;<span class="comment">//底部虚拟结点,索引为n+1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Percolation</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;<span class="comment">// create n-by-n grid, with all sites blocked</span></span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">0</span>) <span class="keyword">throw</span> <span class="keyword">new</span> java.lang.IllegalArgumentException();</span><br><span class="line">        nr = nc = n;</span><br><span class="line">        state = <span class="keyword">new</span> <span class="keyword">boolean</span>[n * n + <span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n * n; i++) &#123;</span><br><span class="line">            state[i] = <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        uf = <span class="keyword">new</span> WeightedQuickUnionUF(n * n + <span class="number">2</span>);</span><br><span class="line">        backwash = <span class="keyword">new</span> WeightedQuickUnionUF(n*n+<span class="number">1</span>);</span><br><span class="line">        openSite = <span class="number">0</span>;</span><br><span class="line">        virtualTop = n * n;</span><br><span class="line">        virtualBottom = n * n + <span class="number">1</span>;</span><br><span class="line">        state[virtualTop] = <span class="keyword">true</span>;</span><br><span class="line">        state[virtualBottom] = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">(<span class="keyword">int</span> row, <span class="keyword">int</span> col)</span> </span>&#123;<span class="comment">// open site (row, col) if it is not open already</span></span><br><span class="line">        <span class="keyword">if</span> (row &lt; <span class="number">1</span> || row &gt; nr || col &lt; <span class="number">1</span> || col &gt; nc) <span class="keyword">throw</span> <span class="keyword">new</span> java.lang.IllegalArgumentException();</span><br><span class="line">        <span class="keyword">if</span> (isOpen(row, col)) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> id = (row - <span class="number">1</span>) * nc + col - <span class="number">1</span>;</span><br><span class="line">        state[id] = <span class="keyword">true</span>;</span><br><span class="line">        openSite++;</span><br><span class="line">        <span class="keyword">if</span>(row == <span class="number">1</span>) &#123;</span><br><span class="line">            uf.union(virtualTop,id);</span><br><span class="line">            backwash.union(virtualTop,id);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(row == nc) uf.union(virtualBottom,id);</span><br><span class="line">        <span class="keyword">if</span> (row &gt;= <span class="number">2</span> &amp;&amp; isOpen(row - <span class="number">1</span>, col)) &#123;</span><br><span class="line">            <span class="keyword">int</span> newId = (row - <span class="number">1</span> - <span class="number">1</span>) * nc + col - <span class="number">1</span>;</span><br><span class="line">            uf.union(newId, id);</span><br><span class="line">            backwash.union(newId,id);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (row &lt;= nr - <span class="number">1</span> &amp;&amp; isOpen(row + <span class="number">1</span>, col)) &#123;</span><br><span class="line">            <span class="keyword">int</span> newId = (row + <span class="number">1</span> - <span class="number">1</span>) * nc + col - <span class="number">1</span>;</span><br><span class="line">            uf.union(newId, id);</span><br><span class="line">            backwash.union(newId,id);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (col &gt;= <span class="number">2</span> &amp;&amp; isOpen(row, col - <span class="number">1</span>)) &#123;</span><br><span class="line">            <span class="keyword">int</span> newId = (row - <span class="number">1</span>) * nc + col - <span class="number">1</span> - <span class="number">1</span>;</span><br><span class="line">            uf.union(newId, id);</span><br><span class="line">            backwash.union(newId,id);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (col &lt;= nc - <span class="number">1</span> &amp;&amp; isOpen(row, col + <span class="number">1</span>)) &#123;</span><br><span class="line">            <span class="keyword">int</span> newId = (row - <span class="number">1</span>) * nc + col + <span class="number">1</span> - <span class="number">1</span>;</span><br><span class="line">            uf.union(newId, id);</span><br><span class="line">            backwash.union(newId,id);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isOpen</span><span class="params">(<span class="keyword">int</span> row, <span class="keyword">int</span> col)</span> </span>&#123;<span class="comment">// is site (row, col) open?</span></span><br><span class="line">        <span class="keyword">if</span> (row &lt; <span class="number">1</span> || row &gt; nr || col &lt; <span class="number">1</span> || col &gt; nc) <span class="keyword">throw</span> <span class="keyword">new</span> java.lang.IllegalArgumentException();</span><br><span class="line">        <span class="keyword">return</span> state[(row - <span class="number">1</span>) * nc + col - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">(<span class="keyword">int</span> row, <span class="keyword">int</span> col)</span> </span>&#123;<span class="comment">// is site (row, col) full?</span></span><br><span class="line">        <span class="keyword">if</span> (row &lt; <span class="number">1</span> || row &gt; nr || col &lt; <span class="number">1</span> || col &gt; nc) <span class="keyword">throw</span> <span class="keyword">new</span> java.lang.IllegalArgumentException();</span><br><span class="line">        <span class="keyword">int</span> currId = (row - <span class="number">1</span>) * nc + col - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> backwash.connected(currId,virtualTop);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numberOfOpenSites</span><span class="params">()</span> </span>&#123;<span class="comment">// number of open sites</span></span><br><span class="line">        <span class="keyword">return</span> openSite;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">percolates</span><span class="params">()</span> </span>&#123; <span class="comment">// does the system percolate?</span></span><br><span class="line">        <span class="keyword">return</span> uf.connected(virtualBottom,virtualTop);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;<span class="comment">// test client (optional)</span></span><br><span class="line">        Percolation per = <span class="keyword">new</span> Percolation(<span class="number">2</span>);</span><br><span class="line">        per.open(<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">        per.open(<span class="number">2</span>,<span class="number">2</span>);</span><br><span class="line">        per.open(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">        System.out.println(per.percolates());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>PercolationStats类，用于数值计算</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.StdRandom;</span><br><span class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.StdStats;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PercolationStats</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span>[] result;<span class="comment">//存储实验结果</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> mean;<span class="comment">//存储平均值，减少mean()方法的调用次数</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> stddev;<span class="comment">//存储方差，减少stddev()方法的调用次数</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PercolationStats</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> trials)</span> </span>&#123;<span class="comment">// perform trials independent experiments on an n-by-n grid</span></span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">0</span> || trials &lt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> java.lang.IllegalArgumentException(<span class="string">"Illeagal Argument"</span>);</span><br><span class="line">        result = <span class="keyword">new</span> <span class="keyword">double</span>[trials];</span><br><span class="line">        <span class="keyword">int</span> ranX, ranY;</span><br><span class="line">        <span class="keyword">int</span> expTimes = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (expTimes &lt;= trials) &#123;</span><br><span class="line">            Percolation per = <span class="keyword">new</span> Percolation(n);</span><br><span class="line">            <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">                ranX = StdRandom.uniform(n) + <span class="number">1</span>;</span><br><span class="line">                ranY = StdRandom.uniform(n) + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">while</span> (per.isOpen(ranX, ranY)) &#123;</span><br><span class="line">                    ranX = StdRandom.uniform(n) + <span class="number">1</span>;</span><br><span class="line">                    ranY = StdRandom.uniform(n) + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                per.open(ranX, ranY);</span><br><span class="line">                <span class="keyword">if</span> (per.percolates()) <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            result[expTimes - <span class="number">1</span>] = (<span class="keyword">double</span>) per.numberOfOpenSites() / (n * n);</span><br><span class="line">            expTimes++;</span><br><span class="line">        &#125;</span><br><span class="line">        mean = StdStats.mean(result);</span><br><span class="line">        stddev = StdStats.stddev(result);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">mean</span><span class="params">()</span> </span>&#123;<span class="comment">// sample mean of percolation threshold</span></span><br><span class="line">        <span class="keyword">return</span> mean;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">stddev</span><span class="params">()</span> </span>&#123; <span class="comment">// sample standard deviation of percolation threshold</span></span><br><span class="line">        <span class="keyword">return</span> stddev;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">confidenceLo</span><span class="params">()</span> </span>&#123;<span class="comment">// low  endpoint of 95% confidence interval</span></span><br><span class="line">        <span class="keyword">double</span> x = <span class="number">1.96</span> * stddev / (Math.sqrt(result.length));</span><br><span class="line">        <span class="keyword">return</span> mean - x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">confidenceHi</span><span class="params">()</span> </span>&#123;<span class="comment">// high endpoint of 95% confidence interval</span></span><br><span class="line">        <span class="keyword">double</span> x = <span class="number">1.96</span> * stddev / (Math.sqrt(result.length));</span><br><span class="line">        <span class="keyword">return</span> mean + x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;<span class="comment">// test client (described below)</span></span><br><span class="line">        <span class="keyword">int</span> N = Integer.parseInt(args[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">int</span> T = Integer.parseInt(args[<span class="number">1</span>]);</span><br><span class="line">        PercolationStats per = <span class="keyword">new</span> PercolationStats(N, T);</span><br><span class="line">        System.out.println(<span class="string">"mean = "</span> + per.mean());</span><br><span class="line">        System.out.println(<span class="string">"stddev = "</span> + per.stddev());</span><br><span class="line">        System.out.println(<span class="string">"95% confidence interval = "</span> + <span class="string">"["</span> + per.confidenceLo() + <span class="string">","</span> + per.confidenceHi() + <span class="string">"]"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithms-Part-I/" rel="tag"># Algorithms Part I</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/09/并查集-union-find算法/" rel="next" title="并查集解决动态连通性问题(union-find算法)">
+                <i class="fa fa-chevron-left"></i> 并查集解决动态连通性问题(union-find算法)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/19/Algorithms-Part-I-Week2-Deques-and-Randomized-Queues/" rel="prev" title="Algorithms Part I Week2: Deques and Randomized Queues">
+                Algorithms Part I Week2: Deques and Randomized Queues <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="李文枭" />
+          <p class="site-author-name" itemprop="name">李文枭</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Bit64L" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:m15800937069@163.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#求解过程"><span class="nav-number">2.</span> <span class="nav-text">求解过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码实现-亲测100-100分"><span class="nav-number">3.</span> <span class="nav-text">代码实现(亲测100/100分)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李文枭</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6c9894e1ad2084284c357e1720382e5e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100909, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100909, xid: "2018/03/11/Algorithms-Part-I-Week1-Assignment-Percolation/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100909/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("oT5gEifDa2RovVv3dHfiFesc-gzGzoHsz", "6rDKBBdQPMcVsCpt7uQ2KEY8");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
