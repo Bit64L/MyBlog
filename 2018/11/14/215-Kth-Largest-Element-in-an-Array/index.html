@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linked List,leetCode," />
+  <meta name="keywords" content="leetCode,divide and conquer," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contain a single digit. Add the two numbers and return i">
-<meta name="keywords" content="Linked List,leetCode">
+<meta name="description" content="通过做本题又复习了快速排序，优先级队列，nice!">
+<meta name="keywords" content="leetCode,divide and conquer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="445. Add Two Numbers II">
-<meta property="og:url" content="http://yoursite.com/2018/11/14/445-Add-Two-Numbers-II/index.html">
+<meta property="og:title" content="215.Kth Largest Element in an Array">
+<meta property="og:url" content="http://yoursite.com/2018/11/14/215-Kth-Largest-Element-in-an-Array/index.html">
 <meta property="og:site_name" content="Blueberry">
-<meta property="og:description" content="You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contain a single digit. Add the two numbers and return i">
+<meta property="og:description" content="通过做本题又复习了快速排序，优先级队列，nice!">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-14T12:15:10.098Z">
+<meta property="og:updated_time" content="2018-11-14T12:26:12.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="445. Add Two Numbers II">
-<meta name="twitter:description" content="You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contain a single digit. Add the two numbers and return i">
+<meta name="twitter:title" content="215.Kth Largest Element in an Array">
+<meta name="twitter:description" content="通过做本题又复习了快速排序，优先级队列，nice!">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/14/445-Add-Two-Numbers-II/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/14/215-Kth-Largest-Element-in-an-Array/"/>
 
 
 
 
 
-  <title>445. Add Two Numbers II | Blueberry</title>
+  <title>215.Kth Largest Element in an Array | Blueberry</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/14/445-Add-Two-Numbers-II/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/14/215-Kth-Largest-Element-in-an-Array/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李文枭">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">445. Add Two Numbers II</h1>
+          <h1 class="post-title" itemprop="name headline">215.Kth Largest Element in an Array</h1>
         
 
         <div class="post-meta">
@@ -302,7 +302,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-14T20:15:10+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-14T20:26:12+08:00">
                 2018-11-14
               </time>
             
@@ -322,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/14/445-Add-Two-Numbers-II/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/11/14/445-Add-Two-Numbers-II/" itemprop="commentsCount"></span>
+                <a href="/2018/11/14/215-Kth-Largest-Element-in-an-Array/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/11/14/215-Kth-Largest-Element-in-an-Array/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -332,7 +332,7 @@
 
           
           
-             <span id="/2018/11/14/445-Add-Two-Numbers-II/" class="leancloud_visitors" data-flag-title="445. Add Two Numbers II">
+             <span id="/2018/11/14/215-Kth-Largest-Element-in-an-Array/" class="leancloud_visitors" data-flag-title="215.Kth Largest Element in an Array">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -363,24 +363,19 @@
       
 
       
-        <p>You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-<p>Follow up:<br>What if you cannot modify the input lists? In other words, reversing the lists is not allowed.</p>
-<p>Example:</p>
-<p>Input: (7 -&gt; 2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 8 -&gt; 0 -&gt; 7</p>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><ol>
-<li>转换为小端表示法，然后相加。</li>
-<li>Follow Up: 因为当前结点依赖于后一个结点的值，可以用栈或递归。</li>
-<li>避开链表直接相加，利用数值数值计算直接相加。（有数字溢出问题）</li>
-</ol>
-<h1 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h1><ol>
-<li>O(N) O(1)</li>
-<li>O(N) O(N)</li>
-<li>O(N) O(1)</li>
-</ol>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers1</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l1 == <span class="keyword">null</span>) <span class="keyword">return</span> l2;</span><br><span class="line">    <span class="keyword">if</span>(l2 == <span class="keyword">null</span>) <span class="keyword">return</span> l1;</span><br><span class="line">    l1 = reverse(l1);</span><br><span class="line">    l2 = reverse(l2);</span><br><span class="line">    ListNode curr1 = l1, curr2 = l2, pre=<span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">int</span> count =<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(curr1!=<span class="keyword">null</span> &amp;&amp; curr2!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = count+curr1.val+curr2.val;</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">        count = sum / <span class="number">10</span>;</span><br><span class="line">        curr1.val = sum % <span class="number">10</span>;</span><br><span class="line">        pre = curr1;</span><br><span class="line">        curr1 = curr1.next;</span><br><span class="line">        curr2 = curr2.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(curr2 != <span class="keyword">null</span>)&#123;</span><br><span class="line">        pre.next = curr2;</span><br><span class="line">        curr1 = curr2;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(curr1!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = count + curr1.val;</span><br><span class="line">        count = sum / <span class="number">10</span>;</span><br><span class="line">        curr1.val = sum %<span class="number">10</span>;</span><br><span class="line">        pre = curr1;</span><br><span class="line">        curr1 = curr1.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(count != <span class="number">0</span>)</span><br><span class="line">        pre.next = <span class="keyword">new</span> ListNode(count);</span><br><span class="line">    <span class="keyword">return</span> reverse(l1);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">reverse</span><span class="params">(ListNode head)</span></span>&#123;</span><br><span class="line">    ListNode dummy = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line">    ListNode curr = head;</span><br><span class="line">    <span class="keyword">while</span>(curr!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        ListNode tmp = curr;</span><br><span class="line">        curr = curr.next;</span><br><span class="line">        tmp.next = dummy.next;</span><br><span class="line">        dummy.next = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers2</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">    Deque&lt;ListNode&gt; stack1 = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    Deque&lt;ListNode&gt; stack2 = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    <span class="keyword">while</span>(l1!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        stack1.push(l1);</span><br><span class="line">        l1 = l1.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(l2!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        stack2.push(l2);</span><br><span class="line">        l2 = l2.next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(!stack1.isEmpty() || !stack2.isEmpty() || count != <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = count;</span><br><span class="line">        <span class="keyword">if</span>(!stack1.isEmpty()) sum+=(stack1.pop()).val;</span><br><span class="line">        <span class="keyword">if</span>(!stack2.isEmpty()) sum+=(stack2.pop()).val;</span><br><span class="line">        count = sum / <span class="number">10</span>;</span><br><span class="line">        ListNode tmp = <span class="keyword">new</span> ListNode(sum % <span class="number">10</span>);</span><br><span class="line">        tmp.next = dummy.next;</span><br><span class="line">        dummy.next = tmp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = listToInt(l1) + listToInt(l2); <span class="comment">// 溢出</span></span><br><span class="line">    ListNode head = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(sum == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    System.out.println(sum);</span><br><span class="line">    <span class="keyword">while</span>(sum != <span class="number">0</span>)&#123;</span><br><span class="line">        ListNode tmp = <span class="keyword">new</span> ListNode(sum%<span class="number">10</span>);</span><br><span class="line">        sum /= <span class="number">10</span>;</span><br><span class="line">        tmp.next = head;</span><br><span class="line">        head = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">listToInt</span><span class="params">(ListNode head)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(head!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        sum=sum * <span class="number">10</span> + head.val;</span><br><span class="line">        head = head.next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>通过做本题又复习了快速排序，优先级队列，nice!<br><a id="more"></a></p>
+<p>Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.</p>
+<p>Example 1:</p>
+<p>Input: [3,2,1,5,6,4] and k = 2<br>Output: 5<br>Example 2:</p>
+<p>Input: [3,2,3,1,2,4,5,5,6] and k = 4<br>Output: 4</p>
+<h2 id="解法一（优先级队列）"><a href="#解法一（优先级队列）" class="headerlink" title="解法一（优先级队列）"></a>解法一（优先级队列）</h2><p>在优先级队列保留后K个元素</p>
+<p>O(NlogN) O(N)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest1</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;<span class="comment">// 优先级队列</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> PriorityQueue&lt;Integer&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> val : nums) &#123;</span><br><span class="line">        pq.offer(val);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (pq.size() &gt; k) &#123;</span><br><span class="line">            pq.poll();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pq.peek();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解法二（排序）"><a href="#解法二（排序）" class="headerlink" title="解法二（排序）"></a>解法二（排序）</h2><p>先排序，然后取倒数第k个数</p>
+<p>O(NlogN) O(1)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest2</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123; <span class="comment">// 排序</span></span><br><span class="line">    <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    <span class="keyword">return</span> nums[nums.length - k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解法三（Partition）"><a href="#解法三（Partition）" class="headerlink" title="解法三（Partition）"></a>解法三（Partition）</h2><p>运用快排Partition思想。<br>最好情况O(N)时间复杂度；当数组有序时，有最差时间复杂度O(N2)<br>可以随机化输入获得来保证O(N)的时间复杂度</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    shuffle(nums);</span><br><span class="line">    <span class="keyword">int</span> lo=<span class="number">0</span>,hi = nums.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> p = partition(nums, lo, hi);</span><br><span class="line">        <span class="keyword">if</span> (p == nums.length - k) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (p &gt; nums.length - k) &#123;</span><br><span class="line">            hi = p - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            lo = p + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums[nums.length-k];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = lo + <span class="number">1</span>, j = hi;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= j &amp;&amp; nums[i] &lt;= nums[lo]) i++;</span><br><span class="line">        <span class="keyword">while</span> (nums[j] &gt; nums[lo]) j--;</span><br><span class="line">        <span class="keyword">if</span> (i &gt; j)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        swap(nums, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">    swap(nums, lo, j);</span><br><span class="line">    <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">shuffle</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> Random random = <span class="keyword">new</span> Random();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> ind = <span class="number">1</span>; ind &lt; a.length; ind++) &#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> r = random.nextInt(ind + <span class="number">1</span>);</span><br><span class="line">        swap(a, ind, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tmp = nums[i];</span><br><span class="line">    nums[i] = nums[j];</span><br><span class="line">    nums[j] = tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -398,9 +393,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linked-List/" rel="tag"># Linked List</a>
-          
             <a href="/tags/leetCode/" rel="tag"># leetCode</a>
+          
+            <a href="/tags/divide-and-conquer/" rel="tag"># divide and conquer</a>
           
         </div>
       
@@ -413,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/08/23-Merge-k-Sorted-Lists/" rel="next" title="23.Merge k Sorted Lists">
-                <i class="fa fa-chevron-left"></i> 23.Merge k Sorted Lists
+              <a href="/2018/11/14/75-Sort-Colors/" rel="next" title="75. Sort Colors">
+                <i class="fa fa-chevron-left"></i> 75. Sort Colors
               </a>
             
           </div>
@@ -423,8 +418,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/14/138-Copy-List-with-Random-Pointer/" rel="prev" title="138. Copy List with Random Pointer">
-                138. Copy List with Random Pointer <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/14/优先级队列-1/" rel="prev" title="优先级队列">
+                优先级队列 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -576,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Complexity"><span class="nav-number">2.</span> <span class="nav-text">Complexity</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解法一（优先级队列）"><span class="nav-number">1.</span> <span class="nav-text">解法一（优先级队列）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法二（排序）"><span class="nav-number">2.</span> <span class="nav-text">解法二（排序）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解法三（Partition）"><span class="nav-number">3.</span> <span class="nav-text">解法三（Partition）</span></a></li></ol></div>
             
 
           </div>
@@ -733,7 +728,7 @@ var _hmt = _hmt || [];
 		_hcwp.push({widget:"Bloggerstream", widget_id: 100909, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 100909, xid: "2018/11/14/445-Add-Two-Numbers-II/"});
+		_hcwp.push({widget:"Stream", widget_id: 100909, xid: "2018/11/14/215-Kth-Largest-Element-in-an-Array/"});
 		
 
 		(function() {
