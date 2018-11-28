@@ -78,6 +78,8 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="LeetCode,Tree," />
+
 
 
 
@@ -92,14 +94,18 @@
 
 
 
+<meta name="description" content="Solution通过先序遍历序列化二叉树，null结点也要存储，使得序列化后的字符串唯一对应一颗二叉树。 反序列化有两种实现方式：  非递归：借助栈，通过遍历序列化字符串还原一颗二叉树 递归：因为每一层递归方法都会消耗序列化字符串，且该消耗对于其它层递归方式是可见的，所以需要将数组转化为链表，然后递归建树。  ComplexityO(N) O(1) O(N) O(N)O(N) O(1) Code1">
+<meta name="keywords" content="LeetCode,Tree">
 <meta property="og:type" content="article">
-<meta property="og:title" content="109. Convert Sorted List to Binary Search Tree">
-<meta property="og:url" content="http://yoursite.com/2018/11/28/109-Convert-Sorted-List-to-Binary-Search-Tree/index.html">
+<meta property="og:title" content="297 Serialize and Deserialize Binary Tree">
+<meta property="og:url" content="http://yoursite.com/2018/11/28/297-Serialize-and-Deserialize-Binary-Tree/index.html">
 <meta property="og:site_name" content="Blueberry">
+<meta property="og:description" content="Solution通过先序遍历序列化二叉树，null结点也要存储，使得序列化后的字符串唯一对应一颗二叉树。 反序列化有两种实现方式：  非递归：借助栈，通过遍历序列化字符串还原一颗二叉树 递归：因为每一层递归方法都会消耗序列化字符串，且该消耗对于其它层递归方式是可见的，所以需要将数组转化为链表，然后递归建树。  ComplexityO(N) O(1) O(N) O(N)O(N) O(1) Code1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-28T02:47:19.590Z">
+<meta property="og:updated_time" content="2018-11-28T12:34:05.679Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="109. Convert Sorted List to Binary Search Tree">
+<meta name="twitter:title" content="297 Serialize and Deserialize Binary Tree">
+<meta name="twitter:description" content="Solution通过先序遍历序列化二叉树，null结点也要存储，使得序列化后的字符串唯一对应一颗二叉树。 反序列化有两种实现方式：  非递归：借助栈，通过遍历序列化字符串还原一颗二叉树 递归：因为每一层递归方法都会消耗序列化字符串，且该消耗对于其它层递归方式是可见的，所以需要将数组转化为链表，然后递归建树。  ComplexityO(N) O(1) O(N) O(N)O(N) O(1) Code1">
 
 
 
@@ -128,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/28/109-Convert-Sorted-List-to-Binary-Search-Tree/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/28/297-Serialize-and-Deserialize-Binary-Tree/"/>
 
 
 
 
 
-  <title>109. Convert Sorted List to Binary Search Tree | Blueberry</title>
+  <title>297 Serialize and Deserialize Binary Tree | Blueberry</title>
   
 
 
@@ -267,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/28/109-Convert-Sorted-List-to-Binary-Search-Tree/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/28/297-Serialize-and-Deserialize-Binary-Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李文枭">
@@ -284,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">109. Convert Sorted List to Binary Search Tree</h1>
+          <h1 class="post-title" itemprop="name headline">297 Serialize and Deserialize Binary Tree</h1>
         
 
         <div class="post-meta">
@@ -296,7 +302,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-28T10:47:19+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-28T20:34:05+08:00">
                 2018-11-28
               </time>
             
@@ -316,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/28/109-Convert-Sorted-List-to-Binary-Search-Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/11/28/109-Convert-Sorted-List-to-Binary-Search-Tree/" itemprop="commentsCount"></span>
+                <a href="/2018/11/28/297-Serialize-and-Deserialize-Binary-Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/11/28/297-Serialize-and-Deserialize-Binary-Tree/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -326,7 +332,7 @@
 
           
           
-             <span id="/2018/11/28/109-Convert-Sorted-List-to-Binary-Search-Tree/" class="leancloud_visitors" data-flag-title="109. Convert Sorted List to Binary Search Tree">
+             <span id="/2018/11/28/297-Serialize-and-Deserialize-Binary-Tree/" class="leancloud_visitors" data-flag-title="297 Serialize and Deserialize Binary Tree">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -357,7 +363,16 @@
       
 
       
-        
+        <h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>通过先序遍历序列化二叉树，null结点也要存储，使得序列化后的字符串唯一对应一颗二叉树。</p>
+<p>反序列化有两种实现方式：</p>
+<ol>
+<li>非递归：借助栈，通过遍历序列化字符串还原一颗二叉树</li>
+<li>递归：因为每一层递归方法都会消耗序列化字符串，且该消耗对于其它层递归方式是可见的，所以需要将数组转化为链表，然后递归建树。</li>
+</ol>
+<h1 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h1><p>O(N) O(1)</p>
+<p>O(N) O(N)<br>O(N) O(1)</p>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Codec11</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String SEP=<span class="string">","</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String NULL=<span class="string">"X"</span>;</span><br><span class="line">    <span class="comment">// Encodes a tree to a single string.</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">serialize</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        StringBuilder res = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> res.append(NULL).append(SEP).toString();</span><br><span class="line">        res.append(root.val).append(SEP);</span><br><span class="line">        res.append(serialize(root.left));</span><br><span class="line">        res.append(serialize(root.right));</span><br><span class="line">        <span class="keyword">return</span> res.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Decodes your encoded data to tree.</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">deserialize</span><span class="params">(String data)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(data.equals(<span class="string">"X,"</span>)) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        String[] strs = data.split(<span class="string">","</span>);</span><br><span class="line">        TreeNode parent = <span class="keyword">new</span> TreeNode(Integer.parseInt(strs[<span class="number">0</span>]));</span><br><span class="line">        TreeNode root = parent;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;strs.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(parent != <span class="keyword">null</span>)&#123;</span><br><span class="line">                stack.push(parent);</span><br><span class="line">                parent.left = strs[i].equals(<span class="string">"X"</span>)? <span class="keyword">null</span>: <span class="keyword">new</span> TreeNode(Integer.parseInt(strs[i]));</span><br><span class="line">                parent = parent.left;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                parent = stack.pop();</span><br><span class="line">                parent.right = strs[i].equals(<span class="string">"X"</span>)?<span class="keyword">null</span>: <span class="keyword">new</span> TreeNode(Integer.parseInt(strs[i]));</span><br><span class="line">                parent = parent.right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Decodes your encoded data to tree.</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">deserialize1</span><span class="params">(String data)</span> </span>&#123;</span><br><span class="line">        String[] strs = data.split(<span class="string">","</span>);</span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> LinkedList&lt;&gt;(Arrays.asList(strs));</span><br><span class="line">        <span class="keyword">return</span> deserializeHelper(list);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">deserializeHelper</span><span class="params">(List&lt;String&gt; list)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(list.get(<span class="number">0</span>).equals(<span class="string">"X"</span>))&#123;</span><br><span class="line">            list.remove(<span class="number">0</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode root = <span class="keyword">new</span> TreeNode(Integer.parseInt(list.get(<span class="number">0</span>)));</span><br><span class="line">        list.remove(<span class="number">0</span>);</span><br><span class="line">        root.left = deserializeHelper(list);</span><br><span class="line">        root.right = deserializeHelper(list);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -372,6 +387,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+          
+            <a href="/tags/Tree/" rel="tag"># Tree</a>
+          
+        </div>
+      
 
       
       
@@ -381,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/27/208-Implement-Trie-Prefix-Tree/" rel="next" title="208. Implement Trie (Prefix Tree)">
-                <i class="fa fa-chevron-left"></i> 208. Implement Trie (Prefix Tree)
+              <a href="/2018/11/28/109-Convert-Sorted-List-to-Binary-Search-Tree/" rel="next" title="109. Convert Sorted List to Binary Search Tree">
+                <i class="fa fa-chevron-left"></i> 109. Convert Sorted List to Binary Search Tree
               </a>
             
           </div>
@@ -390,10 +413,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/28/297-Serialize-and-Deserialize-Binary-Tree/" rel="prev" title="297 Serialize and Deserialize Binary Tree">
-                297 Serialize and Deserialize Binary Tree <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -447,8 +466,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -525,6 +553,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Complexity"><span class="nav-number">2.</span> <span class="nav-text">Complexity</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -676,7 +720,7 @@ var _hmt = _hmt || [];
 		_hcwp.push({widget:"Bloggerstream", widget_id: 100909, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 100909, xid: "2018/11/28/109-Convert-Sorted-List-to-Binary-Search-Tree/"});
+		_hcwp.push({widget:"Stream", widget_id: 100909, xid: "2018/11/28/297-Serialize-and-Deserialize-Binary-Tree/"});
 		
 
 		(function() {
