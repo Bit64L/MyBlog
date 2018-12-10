@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="leetCode,dp,leetCode总结," />
+  <meta name="keywords" content="LeetCode,BFS," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="做了两道关于Subarray的题目，发现是有些套路的，于是写下此篇总结。Subarray是连续的，而Subsequence是不连续的。">
-<meta name="keywords" content="leetCode,dp,leetCode总结">
+<meta name="description" content="Given a 2d grid map of ‘1’s (land) and ‘0’s (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume">
+<meta name="keywords" content="LeetCode,BFS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于Subarray的DP解法总结">
-<meta property="og:url" content="http://yoursite.com/2018/11/02/关于Subarray的DP解法总结/index.html">
+<meta property="og:title" content="200. Number of Islands">
+<meta property="og:url" content="http://yoursite.com/2018/12/10/200-Number-of-Islands/index.html">
 <meta property="og:site_name" content="Blueberry">
-<meta property="og:description" content="做了两道关于Subarray的题目，发现是有些套路的，于是写下此篇总结。Subarray是连续的，而Subsequence是不连续的。">
+<meta property="og:description" content="Given a 2d grid map of ‘1’s (land) and ‘0’s (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-02T12:00:18.010Z">
+<meta property="og:updated_time" content="2018-12-10T08:50:57.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于Subarray的DP解法总结">
-<meta name="twitter:description" content="做了两道关于Subarray的题目，发现是有些套路的，于是写下此篇总结。Subarray是连续的，而Subsequence是不连续的。">
+<meta name="twitter:title" content="200. Number of Islands">
+<meta name="twitter:description" content="Given a 2d grid map of ‘1’s (land) and ‘0’s (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/02/关于Subarray的DP解法总结/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/10/200-Number-of-Islands/"/>
 
 
 
 
 
-  <title>关于Subarray的DP解法总结 | Blueberry</title>
+  <title>200. Number of Islands | Blueberry</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/02/关于Subarray的DP解法总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/200-Number-of-Islands/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李文枭">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于Subarray的DP解法总结</h1>
+          <h1 class="post-title" itemprop="name headline">200. Number of Islands</h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-02T20:00:17+08:00">
-                2018-11-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-10T16:48:27+08:00">
+                2018-12-10
               </time>
             
 
@@ -322,8 +322,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/02/关于Subarray的DP解法总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/11/02/关于Subarray的DP解法总结/" itemprop="commentsCount"></span>
+                <a href="/2018/12/10/200-Number-of-Islands/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/12/10/200-Number-of-Islands/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -332,7 +332,7 @@
 
           
           
-             <span id="/2018/11/02/关于Subarray的DP解法总结/" class="leancloud_visitors" data-flag-title="关于Subarray的DP解法总结">
+             <span id="/2018/12/10/200-Number-of-Islands/" class="leancloud_visitors" data-flag-title="200. Number of Islands">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -363,22 +363,19 @@
       
 
       
-        <p>做了两道关于Subarray的题目，发现是有些套路的，于是写下此篇总结。<br>Subarray是连续的，而Subsequence是不连续的。<br><a id="more"></a></p>
-<h1 id="53-Maximum-Subarray"><a href="#53-Maximum-Subarray" class="headerlink" title="53 Maximum Subarray"></a>53 Maximum Subarray</h1><p>Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
-<p>Example:</p>
-<p>Input: [-2,1,-3,4,-1,2,1,-5,4],<br>Output: 6<br>Explanation: [4,-1,2,1] has the largest sum = 6.<br>Follow up:</p>
-<p>If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.</p>
-<p>可以使dp[i]代表以nums[i]结尾的subarray的最大和，则有dp式：<br>dp[i] = max(nums[i], nums[i]+dp[i-1])。<br>进一步优化：可以发现dp[i]只可能用到dp[i-1]的值，则可以维护一个max变量代表dp[i-1]，可以使空间复杂度降到O(N)，则新的dp式为:<br>max = max(nums[i], nums[i]+max)</p>
-<p>O(N) O(1)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums==<span class="keyword">null</span> || nums.length ==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = nums[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> max=ans;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i= <span class="number">1</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">        max = Math.max(nums[i], nums[i] + max);</span><br><span class="line">        ans = Math.max(ans, max);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="152-Maximum-Product-Subarray"><a href="#152-Maximum-Product-Subarray" class="headerlink" title="152 Maximum Product Subarray"></a>152 Maximum Product Subarray</h1><p>Given an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.</p>
+        <p>Given a 2d grid map of ‘1’s (land) and ‘0’s (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.</p>
 <p>Example 1:</p>
-<p>Input: [2,3,-2,4]<br>Output: 6<br>Explanation: [2,3] has the largest product 6.<br>Example 2:</p>
-<p>Input: [-2,0,-1]<br>Output: 0<br>Explanation: The result cannot be 2, because [-2,-1] is not a subarray.</p>
-<p>此题相较于53题有些许变化。分析过程如下：<br>使dp[i]表示以nums[i]结尾的subarray的最大值，但是当nums[i]小于0时，dp[i-1]<em>nums[i]为以nums[i]结尾的长度大于1的subarray的最小值，不符合我们要的以nums[i]结尾的长度大于1的subarray的最大值。若要满足我们的需求，则需要nums[i]&lt;0时，nums[i] </em>以nums[i-1]为结尾的subarray的最小值，nums[i]&gt;=0时，nums[i] *以nums[i-1]为结尾的subarray的最大值。</p>
-<p>由此可知，dp[i]要保存min和max两个值，因为dp[i]只可能用到dp[i-1]，则设置两个变量min和max即可，这样使得空间复杂度降到O(1)</p>
-<p>O(N) O(1)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="keyword">int</span> nums[])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> r = nums[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> min = r, max = r;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = min;</span><br><span class="line">            min = max;</span><br><span class="line">            max = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        max = Math.max(nums[i], nums[i] * max);</span><br><span class="line">        min = Math.min(nums[i], nums[i] * min);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (r &lt; max) &#123;</span><br><span class="line">            r = max;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Input:<br>11110<br>11010<br>11000<br>00000</p>
+<p>Output: 1<br>Example 2:</p>
+<p>Input:<br>11000<br>11000<br>00100<br>00011</p>
+<p>Output: 3</p>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><ol>
+<li><p>BFS<br> 对于一个为1的位置，将其所有的邻居都加入队列，并置0(防止重复添加，降低效率)</p>
+</li>
+<li><p>DFS<br> 对于一个为1的位置，递归将所有与其相邻的为1的位置置0</p>
+</li>
+</ol>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numIslands</span><span class="params">(<span class="keyword">char</span>[][] grid)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(grid == <span class="keyword">null</span> || grid.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    Deque&lt;Integer&gt; q = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    <span class="keyword">int</span> row = grid.length, col = grid[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; grid.length; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; grid[<span class="number">0</span>].length; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(grid[i][j] == <span class="string">'1'</span>)&#123;</span><br><span class="line">                res++;</span><br><span class="line">                q.offer(i*col + j);</span><br><span class="line">                <span class="keyword">while</span>(!q.isEmpty())&#123;</span><br><span class="line">                    <span class="keyword">int</span> num = q.poll();</span><br><span class="line">                    <span class="keyword">int</span> r = num / col, c = num % col;</span><br><span class="line">                    grid[r][c] = <span class="string">'0'</span>;</span><br><span class="line">                    <span class="keyword">if</span>(r - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; grid[r-<span class="number">1</span>][c] == <span class="string">'1'</span>)</span><br><span class="line">                        q.offer((r-<span class="number">1</span>) * col + c);</span><br><span class="line">                    <span class="keyword">if</span>(r + <span class="number">1</span> &lt; row &amp;&amp; grid[r+<span class="number">1</span>][c] == <span class="string">'1'</span>)</span><br><span class="line">                        q.offer((r+<span class="number">1</span>) * col + c);</span><br><span class="line">                    <span class="keyword">if</span>(c+<span class="number">1</span> &lt; col &amp;&amp; grid[r][c+<span class="number">1</span>] == <span class="string">'1'</span>)</span><br><span class="line">                        q.offer(r*col + c+<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">if</span>(c-<span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; grid[r][c-<span class="number">1</span>] == <span class="string">'1'</span>)</span><br><span class="line">                        q.offer(r*col + c - <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numIslands1</span><span class="params">(<span class="keyword">char</span>[][] grid)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(grid == <span class="keyword">null</span> || grid.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; grid.length; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; grid[<span class="number">0</span>].length; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(grid[i][j] == <span class="string">'1'</span>)&#123;</span><br><span class="line">                res++;</span><br><span class="line">                zeroDfs(grid, i, j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">zeroDfs</span><span class="params">(<span class="keyword">char</span>[][] grid, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i &lt; <span class="number">0</span> || i &gt;= grid.length || j &lt; <span class="number">0</span> || j &gt;= grid[<span class="number">0</span>].length</span><br><span class="line">            || grid[i][j] == <span class="string">'0'</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    grid[i][j] = <span class="string">'0'</span>;</span><br><span class="line">    zeroDfs(grid, i, j + <span class="number">1</span>);</span><br><span class="line">    zeroDfs(grid, i + <span class="number">1</span>, j);</span><br><span class="line">    zeroDfs(grid, i, j - <span class="number">1</span>);</span><br><span class="line">    zeroDfs(grid, i - <span class="number">1</span>, j);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -396,11 +393,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/leetCode/" rel="tag"># leetCode</a>
+            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
           
-            <a href="/tags/dp/" rel="tag"># dp</a>
-          
-            <a href="/tags/leetCode总结/" rel="tag"># leetCode总结</a>
+            <a href="/tags/BFS/" rel="tag"># BFS</a>
           
         </div>
       
@@ -413,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/01/95-96-Unique-Binary-Search-TreesI-II/" rel="next" title="95/96.Unique Binary Search TreesI/II">
-                <i class="fa fa-chevron-left"></i> 95/96.Unique Binary Search TreesI/II
+              <a href="/2018/12/10/5-Longest-Palindromic-Substring/" rel="next" title="5. Longest Palindromic Substring">
+                <i class="fa fa-chevron-left"></i> 5. Longest Palindromic Substring
               </a>
             
           </div>
@@ -422,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/02/120-Triangle/" rel="prev" title="120.Triangle">
-                120.Triangle <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -576,7 +567,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#53-Maximum-Subarray"><span class="nav-number">1.</span> <span class="nav-text">53 Maximum Subarray</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#152-Maximum-Product-Subarray"><span class="nav-number">2.</span> <span class="nav-text">152 Maximum Product Subarray</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">2.</span> <span class="nav-text">Code</span></a></li></ol></div>
             
 
           </div>
@@ -733,7 +724,7 @@ var _hmt = _hmt || [];
 		_hcwp.push({widget:"Bloggerstream", widget_id: 100909, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 100909, xid: "2018/11/02/关于Subarray的DP解法总结/"});
+		_hcwp.push({widget:"Stream", widget_id: 100909, xid: "2018/12/10/200-Number-of-Islands/"});
 		
 
 		(function() {
