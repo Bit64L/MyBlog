@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="LeetCode,Math," />
+  <meta name="keywords" content="LeetCode,BST," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="Implement pow(x, n), which calculates x raised to the power n (xn). Example 1: Input: 2.00000, 10Output: 1024.00000Example 2: Input: 2.10000, 3Output: 9.26100Example 3: Input: 2.00000, -2Output: 0.250">
-<meta name="keywords" content="LeetCode,Math">
+<meta name="description" content="第一眼看到以为是要写红黑树或者AVL树，马上去翻阅答案才发现链表是有序的，这样的话就很容易想到思路了，以后还是要注意审题。另外本题也有许多细节要注意。">
+<meta name="keywords" content="LeetCode,BST">
 <meta property="og:type" content="article">
-<meta property="og:title" content="50. Pow(x, n)">
-<meta property="og:url" content="http://yoursite.com/2018/12/02/50-Pow-x-n/index.html">
+<meta property="og:title" content="109. Convert Sorted List to Binary Search Tree">
+<meta property="og:url" content="http://yoursite.com/2019/03/18/109-Convert-Sorted-List-to-Binary-Search-Tree-1/index.html">
 <meta property="og:site_name" content="Blueberry">
-<meta property="og:description" content="Implement pow(x, n), which calculates x raised to the power n (xn). Example 1: Input: 2.00000, 10Output: 1024.00000Example 2: Input: 2.10000, 3Output: 9.26100Example 3: Input: 2.00000, -2Output: 0.250">
+<meta property="og:description" content="第一眼看到以为是要写红黑树或者AVL树，马上去翻阅答案才发现链表是有序的，这样的话就很容易想到思路了，以后还是要注意审题。另外本题也有许多细节要注意。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-02T11:52:43.271Z">
+<meta property="og:updated_time" content="2019-03-18T07:29:47.534Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="50. Pow(x, n)">
-<meta name="twitter:description" content="Implement pow(x, n), which calculates x raised to the power n (xn). Example 1: Input: 2.00000, 10Output: 1024.00000Example 2: Input: 2.10000, 3Output: 9.26100Example 3: Input: 2.00000, -2Output: 0.250">
+<meta name="twitter:title" content="109. Convert Sorted List to Binary Search Tree">
+<meta name="twitter:description" content="第一眼看到以为是要写红黑树或者AVL树，马上去翻阅答案才发现链表是有序的，这样的话就很容易想到思路了，以后还是要注意审题。另外本题也有许多细节要注意。">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/02/50-Pow-x-n/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/18/109-Convert-Sorted-List-to-Binary-Search-Tree-1/"/>
 
 
 
 
 
-  <title>50. Pow(x, n) | Blueberry</title>
+  <title>109. Convert Sorted List to Binary Search Tree | Blueberry</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/02/50-Pow-x-n/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/109-Convert-Sorted-List-to-Binary-Search-Tree-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李文枭">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">50. Pow(x, n)</h1>
+          <h1 class="post-title" itemprop="name headline">109. Convert Sorted List to Binary Search Tree</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-02T19:45:07-08:00">
-                2018-12-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T00:29:47-07:00">
+                2019-03-18
               </time>
             
 
@@ -332,8 +332,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/02/50-Pow-x-n/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/12/02/50-Pow-x-n/" itemprop="commentsCount"></span>
+                <a href="/2019/03/18/109-Convert-Sorted-List-to-Binary-Search-Tree-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2019/03/18/109-Convert-Sorted-List-to-Binary-Search-Tree-1/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -342,7 +342,7 @@
 
           
           
-             <span id="/2018/12/02/50-Pow-x-n/" class="leancloud_visitors" data-flag-title="50. Pow(x, n)">
+             <span id="/2019/03/18/109-Convert-Sorted-List-to-Binary-Search-Tree-1/" class="leancloud_visitors" data-flag-title="109. Convert Sorted List to Binary Search Tree">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -373,21 +373,21 @@
       
 
       
-        <p>Implement pow(x, n), which calculates x raised to the power n (xn).</p>
-<p>Example 1:</p>
-<p>Input: 2.00000, 10<br>Output: 1024.00000<br>Example 2:</p>
-<p>Input: 2.10000, 3<br>Output: 9.26100<br>Example 3:</p>
-<p>Input: 2.00000, -2<br>Output: 0.25000<br>Explanation: 2-2 = 1/22 = 1/4 = 0.25<br>Note:</p>
-<p>-100.0 &lt; x &lt; 100.0<br>n is a 32-bit signed integer, within the range [−231, 231 − 1]</p>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>解法1：递归法<br>当n为偶数时，res = myPow(n/2) <em> myPow(n/2)，因为子问题重叠，可以用tmp记录下myPow(n/2)，然后res = tmp </em> tmp;<br>当n为奇数时，res = x <em> myPow(n/2) </em> myPow(n/2),同样可用tmp来缓存myPow(n/2)的值。</p>
-<p>解法2：迭代法<br>将指数n看做一个二进制数，二进制数为1是，需要将product乘入res。product维护x^(2i)。</p>
+        <p>第一眼看到以为是要写红黑树或者AVL树，马上去翻阅答案才发现链表是有序的，这样的话就很容易想到思路了，以后还是要注意审题。另外本题也有许多细节要注意。<br><a id="more"></a><br>Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.</p>
+<p>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</p>
+<p>Example:</p>
+<p>Given the sorted linked list: [-10,-3,0,5,9],</p>
+<p>One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:</p>
+<pre><code> 0
+/ \
+</code></pre><p>   -3   9<br>   /   /<br> -10  5</p>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>递归建树，链表的中间结点为根节点，链表左边构成根节点的左子树，右边构成根节点的右子树。</p>
 <p>细节：</p>
 <ol>
-<li>n由负数转化为整数时，可能会溢出，需要将n扩展为long型</li>
-<li>指数为0时，一切皆为1</li>
+<li>head和mid可能会指向同一个结点，当head == mid时，需要特殊处理，防止Stack Overflow。</li>
 </ol>
-<h1 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h1><p>O(logN) O(1)<br>O(logN) O(1)</p>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    x = n &gt; <span class="number">0</span>? x : <span class="number">1</span>/x;</span><br><span class="line">    <span class="keyword">return</span> helper(x,Math.abs((<span class="keyword">long</span>)n));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">helper</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">long</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">double</span> res = helper(x, n/<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> n  % <span class="number">2</span> == <span class="number">0</span> ? res*res : res*res*x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">myPow1</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    x = n &gt; <span class="number">0</span>? x : <span class="number">1</span>/x;</span><br><span class="line">    <span class="keyword">long</span> exp = Math.abs((<span class="keyword">long</span>)n);</span><br><span class="line">    <span class="keyword">double</span> product = x;</span><br><span class="line">    <span class="keyword">double</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;exp&gt;<span class="number">0</span>;exp/=<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(exp % <span class="number">2</span> == <span class="number">1</span>) res *= product;</span><br><span class="line">        product *= product;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h1><p>一共LogN层，每层查找mid需要O(N), 所以时间复杂度为O(NlogN)<br>空间复杂度 O(1)</p>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">sortedListToBST</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(head.next == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">new</span> TreeNode(head.val);</span><br><span class="line">    ListNode mid = findMid(head);</span><br><span class="line">    TreeNode root = <span class="keyword">new</span> TreeNode(mid.val);</span><br><span class="line">    root.left = head == mid ? <span class="keyword">null</span> : sortedListToBST(head);</span><br><span class="line">    root.right = sortedListToBST(mid.next);</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">findMid</span><span class="params">(ListNode head)</span></span>&#123;</span><br><span class="line">    ListNode slow = head, fast = head.next, pre=<span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">while</span>(fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">        pre = slow;</span><br><span class="line">        slow = slow.next;</span><br><span class="line">        fast = fast.next.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pre != <span class="keyword">null</span>) pre.next = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">return</span> slow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -407,7 +407,7 @@
           
             <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
           
-            <a href="/tags/Math/" rel="tag"># Math</a>
+            <a href="/tags/BST/" rel="tag"># BST</a>
           
         </div>
       
@@ -420,8 +420,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/02/402-Remove-K-Digits/" rel="next" title="402. Remove K Digits">
-                <i class="fa fa-chevron-left"></i> 402. Remove K Digits
+              <a href="/2019/03/17/“记第一次参加Hackthon”/" rel="next" title="“记第一次参加Hackthon”">
+                <i class="fa fa-chevron-left"></i> “记第一次参加Hackthon”
               </a>
             
           </div>
@@ -429,10 +429,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/03/279-Perfect-Squares/" rel="prev" title="279. Perfect Squares">
-                279. Perfect Squares <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -769,7 +765,7 @@ var _hmt = _hmt || [];
 		_hcwp.push({widget:"Bloggerstream", widget_id: 100909, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 100909, xid: "2018/12/02/50-Pow-x-n/"});
+		_hcwp.push({widget:"Stream", widget_id: 100909, xid: "2019/03/18/109-Convert-Sorted-List-to-Binary-Search-Tree-1/"});
 		
 
 		(function() {
